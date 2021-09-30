@@ -4,8 +4,8 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import BookList from './Redux/books/BookList';
-import Categories from './Redux/categories/Categories';
+import BookList from './components/BookList';
+import Categories from './components/Categories';
 import Navbar from './components/NavBar';
 import AddBook from './components/AddBook';
 import './App.css';
