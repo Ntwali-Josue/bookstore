@@ -7,7 +7,7 @@ import {
 import BookList from './components/BookList';
 import Categories from './components/Categories';
 import Navbar from './components/NavBar';
-// import AddBook from './components/AddBook';
+import AddBook from './components/AddBook';
 import './App.css';
 
 const App = () => (
@@ -22,7 +22,7 @@ const App = () => (
             </Route>
             <Route exact path="/">
               <BookList />
-              {/* <AddBook /> */}
+              <AddBook />
             </Route>
           </Switch>
         </div>
