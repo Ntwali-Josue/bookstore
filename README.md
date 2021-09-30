@@ -4,8 +4,7 @@
 
 > This project hels the user to manage his lists of books by tracking his/her reading progress.
 
-![screenshot](./app_screenshot.png)
-
+![screenshot]()
 
 ## Built With
 
