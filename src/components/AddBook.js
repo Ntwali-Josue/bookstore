@@ -30,8 +30,8 @@ const AddBook = () => (
           <Form.Select defaultValue="Category">
             <option>Category</option>
             <option>Action</option>
-            <option>Drama</option>
-            <option>Romance</option>
+            <option>Economy</option>
+            <option>Science Fiction</option>
           </Form.Select>
         </Form.Group>
         <Button as={Col} variant="primary" type="submit">
