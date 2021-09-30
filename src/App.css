@@ -1,0 +1,20 @@
+.app {
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  text-align: center;
+  margin: 0 10px;
+}
+
+/* Books */
+
+.book-btn {
+  margin: 5px 0;
+  padding: 0 15px;
+  background-color: white;
+  color: #4386bf;
+  border: none;
+  border-left: solid 1px #e8e8e8;
+}

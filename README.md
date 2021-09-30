@@ -1,59 +1,49 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Book Store
 
-> One paragraph statement about the project.
+> This project helps the user to manage his lists of books by tracking his/her reading progress.
 
-![screenshot](./app_screenshot.png)
+![screenshot](https://user-images.githubusercontent.com/58233753/135527386-94a5defb-5d12-4892-a089-c82ed19dca8f.png)
 
-Additional description about the project and its features.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Javascript,HTML, CSS
+- React & Redux, Boostrap
+- GIT,Heroku, Linters
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://josuebookstore.netlify.app)
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+- Git
+- Node.js
 
 ### Setup
-
+- Run `npm clone https://github.com/Ntwali-Josue/bookstore.git` to get the project in your local machine
 ### Install
-
+- Run `npm install` to install required dependecies for running the project
 ### Usage
-
+- Run `npm start` to run and use the project
 ### Run tests
-
+- `Coming soon...`
 ### Deployment
+- Run `npm run deploy`
 
-
-
-## Authors
+## Author
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Ntwali-Josue](https://github.com/Ntwali-Josue)
+- Twitter: [@JosueNtwali](https://twitter.com/JosueNtwali)
+- LinkedIn: [karangwa](https://linkedin.com/in/karangwa)
 
 ## 🤝 Contributing
 
