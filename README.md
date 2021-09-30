@@ -2,9 +2,10 @@
 
 # Book Store
 
-> This project hels the user to manage his lists of books by tracking his/her reading progress.
+> This project helps the user to manage his lists of books by tracking his/her reading progress.
 
-![screenshot]()
+![screenshot](https://user-images.githubusercontent.com/58233753/135527386-94a5defb-5d12-4892-a089-c82ed19dca8f.png)
+
 
 ## Built With
 
