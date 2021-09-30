@@ -5,7 +5,7 @@ import {
   Route,
 } from 'react-router-dom';
 import BookList from './components/BookList';
-// import Categories from './components/Categories';
+import Categories from './components/Categories';
 import Navbar from './components/NavBar';
 // import AddBook from './components/AddBook';
 import './App.css';
@@ -18,7 +18,7 @@ const App = () => (
         <div className="app-container">
           <Switch>
             <Route path="/categories">
-              {/* <Categories /> */}
+              <Categories />
             </Route>
             <Route exact path="/">
               <BookList />
