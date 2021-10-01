@@ -24,7 +24,7 @@ const BookItem = ({ title, author, removeBook }) => (
           <button type="button" className="book-btn">Edit</button>
         </Card.Body>
         <Card.Body style={{ display: 'flex', flexDirection: 'row' }}>
-          <Card.Title>65%</Card.Title>
+          <Card.Title>50%</Card.Title>
           <Card.Text>Completed</Card.Text>
         </Card.Body>
         <Card.Body>
