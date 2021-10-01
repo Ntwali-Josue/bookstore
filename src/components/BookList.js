@@ -27,9 +27,8 @@ const BookList = () => {
 
   const deleteBook = (book) => {
     dispatch(removeBook(book.item_id));
-    dispatch(removeBook(book));
-    const newBooks = booksData.filter((item) => item.id !== book.id);
-    setBooksData(newBooks);
+    // const newBooks = booksData.filter((item) => item.id !== book.id);
+    // setBooksData(newBooks);
   };
 
   return (
