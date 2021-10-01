@@ -19,7 +19,6 @@ export const addBook = (book) => async (dispatch) => {
       type: ADD_BOOK,
       book,
     });
-    console.log('added');
   }
 };
 
