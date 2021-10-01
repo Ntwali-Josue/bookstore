@@ -6,9 +6,9 @@ const cardStyle = {
   width: '100%',
   display: 'flex',
   flexDirection: 'row',
-  marginBottom: '1.5rem',
+  marginBottom: '10px',
   alignItems: 'center',
-  padding: '1rem 2rem',
+  padding: '10px 20px',
 };
 
 const BookItem = ({ title, category, removeBook }) => (
