@@ -8,7 +8,6 @@ import { addBook, removeBook, displayBooks } from '../Redux/books/books';
 const BookList = () => {
   const dispatch = useDispatch();
   const booksData = useSelector((state) => state.booksReducer);
-  console.log(booksData);
 
   useEffect(() => {
     dispatch(displayBooks());
