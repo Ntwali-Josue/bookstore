@@ -11,14 +11,14 @@ const cardStyle = {
   padding: '1rem 2rem',
 };
 
-const BookItem = ({ title, author, removeBook }) => (
+const BookItem = ({ title, category, removeBook }) => (
   <>
     <div className="book">
       <Card style={cardStyle}>
         <Card.Body>
-          <Card.Subtitle className="mb-2 text-muted">Actions</Card.Subtitle>
+          <Card.Subtitle className="mb-2 text-muted">{category}</Card.Subtitle>
           <Card.Title className="book-title">{title}</Card.Title>
-          <Card.Text>{author}</Card.Text>
+          <Card.Text>Josh Reys</Card.Text>
           <button type="button" className="book-btn" style={{ border: 'none' }}>Comments</button>
           <button type="button" className="book-btn" onClick={removeBook}>Remove</button>
           <button type="button" className="book-btn">Edit</button>
@@ -42,5 +42,5 @@ export default BookItem;
 BookItem.propTypes = {
   removeBook: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
