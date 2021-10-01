@@ -22,10 +22,16 @@ export const addBook = (book) => async (dispatch) => {
   }
 };
 
-export const removeBook = (book) => ({
-  type: REMOVE_BOOK,
-  book,
-});
+export const removeBook = (bookId) => async (dispatch) => {
+  const result = await axios.delete(`${fetchURL}/${bookId}`);
+  const removedBook = await result.data;
+  if (removedBook) {
+    dispatch({
+      type: REMOVE_BOOK,
+      bookId,
+    });
+  }
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
