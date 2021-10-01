@@ -15,7 +15,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://add-remove-book.netlify.app)
+[Live Demo Link](connect-bookstore-api.netlify.app)
 
 
 ## Getting Started
