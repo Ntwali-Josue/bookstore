@@ -1,24 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import BookItem from './BookItem';
+import AddBook from './AddBook';
+import { addBook, removeBook } from '../Redux/books/books';
+import store from '../Redux/cofigureStore';
 
 const BookList = () => {
-  const booksDetails = [
-    { category: 'Action', title: 'The Hunger Games', author: 'Suzanne Collins' },
-    { category: 'Economy', title: 'Capital in the Twenty', author: 'Josh the hero' },
-    { category: 'Science fiction', title: 'Dune', author: 'Frank Herbert' },
-  ];
+  const dispatch = useDispatch();
+  const [booksData, setBooksData] = useState(store.getState().booksReducer);
 
-  const booksCard = booksDetails.map((book) => (
-    <BookItem category={book.category} title={book.title} author={book.author} key={uuidv4()} />
-  ));
+  const submitBookToStore = (book) => {
+    const newBook = {
+      id: uuidv4(), // generate unique ID
+      title: book.title,
+      author: book.author,
+    };
+    dispatch(addBook(newBook));
+    setBooksData((prevState) => [...prevState, newBook]);
+  };
+
+  const deleteBook = (book) => {
+    dispatch(removeBook(book));
+    const newBooks = booksData.filter((item) => item.id !== book.id);
+    setBooksData(newBooks);
+  };
 
   return (
 
     <div className="books">
-      {booksCard}
+      { booksData.map((book) => (
+        <BookItem
+          title={book.title}
+          author={book.author}
+          key={book.id}
+          removeBook={() => {
+            deleteBook(book);
+          }}
+        />
+      ))}
+
+      <AddBook submitBook={submitBookToStore} />
     </div>
   );
+
+  // return <div className="books">{booksCard}</div>;
 };
 
 export default BookList;
