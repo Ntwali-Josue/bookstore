@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 import BookItem from './BookItem';
 import AddBook from './AddBook';
 import { addBook, removeBook, displayBooks } from '../Redux/books/books';
-// import store from '../Redux/cofigureStore';
 
 const BookList = () => {
   const dispatch = useDispatch();
