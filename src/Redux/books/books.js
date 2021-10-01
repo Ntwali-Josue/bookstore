@@ -19,6 +19,7 @@ export const addBook = (book) => async (dispatch) => {
       type: ADD_BOOK,
       book,
     });
+    console.log('added');
   }
 };
 
@@ -33,14 +34,35 @@ export const removeBook = (bookId) => async (dispatch) => {
   }
 };
 
+export const displayBooks = () => async (dispatch) => {
+  const result = await axios.get(fetchURL);
+  const books = await result.data;
+
+  if (books) {
+    const allBooks = Object.entries(result.data);
+    const newBooks = [];
+    allBooks.forEach(([key, value]) => {
+      const item = { ...value, item_id: key };
+      const itemObj = Object.values(item);
+      newBooks.push({ ...itemObj[0], item_id: itemObj[1] });
+    });
+    dispatch({
+      type: GET_BOOKS,
+      newBooks,
+    });
+  }
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
       return [...state, action.book];
 
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.book.id);
+      return state.filter((book) => book.item_id !== action.bookId);
 
+    case GET_BOOKS:
+      return [...action.newBooks];
     default:
       return state;
   }
