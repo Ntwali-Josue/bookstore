@@ -20,13 +20,10 @@ const BookList = () => {
       category: book.category,
     };
     dispatch(addBook(newBook));
-    // setBooksData((prevState) => [...prevState, newBook]);
   };
 
   const deleteBook = (book) => {
     dispatch(removeBook(book.item_id));
-    // const newBooks = booksData.filter((item) => item.id !== book.id);
-    // setBooksData(newBooks);
   };
 
   return (
@@ -46,8 +43,6 @@ const BookList = () => {
       <AddBook submitBook={submitBookToStore} />
     </div>
   );
-
-  // return <div className="books">{booksCard}</div>;
 };
 
 export default BookList;
