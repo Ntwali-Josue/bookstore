@@ -5,18 +5,6 @@ import {
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
-const formStyle = [
-  {
-    width: '10.875rem',
-    height: '1.5rem',
-    margin: '1.813rem 32.75rem 1.188rem 0',
-    fontSize: '1.25rem',
-    fontWeight: 'Bold',
-    letterSpacing: '-0.18px',
-    color: '#888',
-  },
-];
-
 const AddBook = ({ submitBook }) => {
   const inputRef = useRef([]);
 
@@ -43,10 +31,10 @@ const AddBook = ({ submitBook }) => {
 
   return (
     <div className="form">
-      <h2 style={formStyle[0]}>Add New Book</h2>
+      <h2 className="mx-4">Add New Book</h2>
       <Form>
-        <Row className="mb-4">
-          <Col xs={5} controlId="formGridCity">
+        <Row className="m-4">
+          <Col xs="auto" controlId="formGridCity">
             <Form.Control
               placeholder="Book title"
               ref={(el) => {
@@ -54,7 +42,7 @@ const AddBook = ({ submitBook }) => {
               }}
             />
           </Col>
-          <Col xs={2} controlId="formGridCity">
+          <Col xs="auto" controlId="formGridCity">
             <Form.Control
               placeholder="Author"
               ref={(el) => {
@@ -62,17 +50,21 @@ const AddBook = ({ submitBook }) => {
               }}
             />
           </Col>
-          <Form.Group as={Col} controlId="formGridState">
-            <Form.Select defaultValue="Category">
-              <option>Category</option>
-              <option>Action</option>
-              <option>Economy</option>
-              <option>Science Fiction</option>
-            </Form.Select>
-          </Form.Group>
-          <Button as={Col} variant="primary" type="submit" onClick={addBook}>
-            ADD BOOK
-          </Button>
+          <Col xs="auto">
+            <Form.Group controlId="formGridState">
+              <Form.Select defaultValue="Category">
+                <option>Category</option>
+                <option>Action</option>
+                <option>Economy</option>
+                <option>Science Fiction</option>
+              </Form.Select>
+            </Form.Group>
+          </Col>
+          <Col>
+            <Button as={Col} variant="primary" type="submit" onClick={addBook}>
+              ADD BOOK
+            </Button>
+          </Col>
         </Row>
       </Form>
     </div>
