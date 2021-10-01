@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 const AddBook = ({ submitBook }) => {
   const inputRef = useRef([]);
 
-  const inputs = ['title', 'author'];
+  const inputs = ['title', 'category'];
 
   useEffect(() => {
     if (inputs.length !== 0) {
@@ -19,15 +19,15 @@ const AddBook = ({ submitBook }) => {
 
   const addBook = (e) => {
     e.preventDefault();
-    if (inputRef.current[0].value && inputRef.current[1].value) {
+    if (inputRef.current[0].value && inputRef.current[2].value) {
       const newBook = {
         id: uuidv4(),
         title: inputRef.current[0].value,
-        author: inputRef.current[1].value,
+        category: inputRef.current[2].value,
       };
       submitBook(newBook);
       inputRef.current[0].value = '';
-      inputRef.current[1].value = '';
+      inputRef.current[2].value = '';
     }
   };
 
@@ -46,9 +46,9 @@ const AddBook = ({ submitBook }) => {
           </Col>
           <Col xs="auto" controlId="formGridCity">
             <Form.Control
-              placeholder="Author"
+              placeholder="category"
               ref={(el) => {
-                inputRef.current[1] = el;
+                inputRef.current[2] = el;
               }}
             />
           </Col>
