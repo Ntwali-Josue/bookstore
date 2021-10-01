@@ -1,26 +1,32 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import BookItem from './BookItem';
 import AddBook from './AddBook';
-import { addBook, removeBook } from '../Redux/books/books';
-import store from '../Redux/cofigureStore';
+import { addBook, removeBook, displayBooks } from '../Redux/books/books';
+// import store from '../Redux/cofigureStore';
 
 const BookList = () => {
   const dispatch = useDispatch();
-  const [booksData, setBooksData] = useState(store.getState().booksReducer);
+  const booksData = useSelector((state) => state.booksReducer);
+  console.log(booksData);
+
+  useEffect(() => {
+    dispatch(displayBooks());
+  }, []);
 
   const submitBookToStore = (book) => {
     const newBook = {
-      id: uuidv4(), // generate unique ID
+      item_id: uuidv4(), // generate unique ID
       title: book.title,
-      author: book.author,
+      category: book.category,
     };
     dispatch(addBook(newBook));
-    setBooksData((prevState) => [...prevState, newBook]);
+    // setBooksData((prevState) => [...prevState, newBook]);
   };
 
   const deleteBook = (book) => {
+    dispatch(removeBook(book.item_id));
     dispatch(removeBook(book));
     const newBooks = booksData.filter((item) => item.id !== book.id);
     setBooksData(newBooks);
@@ -32,8 +38,8 @@ const BookList = () => {
       { booksData.map((book) => (
         <BookItem
           title={book.title}
-          author={book.author}
-          key={book.id}
+          category={book.category}
+          key={booksData.indexOf(book)}
           removeBook={() => {
             deleteBook(book);
           }}
