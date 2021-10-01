@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from 'react';
 import {
   Row, Form, Button, Col,
 } from 'react-bootstrap';
+import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 
 const AddBook = ({ submitBook }) => {
@@ -20,6 +21,7 @@ const AddBook = ({ submitBook }) => {
     e.preventDefault();
     if (inputRef.current[0].value && inputRef.current[1].value) {
       const newBook = {
+        id: uuidv4(),
         title: inputRef.current[0].value,
         author: inputRef.current[1].value,
       };
