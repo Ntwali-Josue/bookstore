@@ -3,10 +3,9 @@ import { Card, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 const cardStyle = {
-  width: '100%',
   display: 'flex',
   flexDirection: 'row',
-  marginBottom: '10px',
+  marginBottom: '15px',
   alignItems: 'center',
   padding: '10px 20px',
 };
@@ -19,12 +18,13 @@ const BookItem = ({ title, category, removeBook }) => (
           <Card.Subtitle className="mb-2 text-muted">{category}</Card.Subtitle>
           <Card.Title className="book-title">{title}</Card.Title>
           <Card.Text>Josh Reys</Card.Text>
-          <button type="button" className="book-btn" style={{ border: 'none' }}>Comments</button>
+          <button type="button" className="book-btn comments">Comments</button>
           <button type="button" className="book-btn" onClick={removeBook}>Remove</button>
           <button type="button" className="book-btn">Edit</button>
         </Card.Body>
-        <Card.Body style={{ display: 'flex', flexDirection: 'row' }}>
-          <Card.Title>50%</Card.Title>
+        <Card.Body>
+          <Card.Img variant="top" src="https://i.stack.imgur.com/7wcxc.png" className="image" />
+          <Card.Title>24%</Card.Title>
           <Card.Text>Completed</Card.Text>
         </Card.Body>
         <Card.Body>
