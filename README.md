@@ -15,7 +15,7 @@
 
 ## Live Demo
 
-[Live Demo Link](connect-bookstore-api.netlify.app)
+[Live Demo Link](https://epic-mccarthy-bd8204.netlify.app/)
 
 
 ## Getting Started
